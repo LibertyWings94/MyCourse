@@ -8,14 +8,14 @@ using Microsoft.Extensions.Logging;
 
 namespace MyCourse.Controllers
 {
-    [Route("[controller]")]
-    public class ProdottoController : Controller
+   
+    public class CoursesController : Controller
     {
-        private readonly ILogger<ProdottoController> _logger;
+        
 
-        public ProdottoController(ILogger<ProdottoController> logger)
+        public CoursesController()
         {
-            _logger = logger;
+            
         }
 
         public IActionResult Index()
@@ -23,10 +23,14 @@ namespace MyCourse.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Detail(string id)
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
-            return View("Error!");
+            return View();
         }
     }
 }
