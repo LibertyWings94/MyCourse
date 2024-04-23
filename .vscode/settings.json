@@ -6,5 +6,6 @@
     },
     
     "fontAwesomeAutocomplete.patterns": ["**/*.cshtml"],
-    "fontAwesomeAutocomplete.triggerWord": "f"
+    "fontAwesomeAutocomplete.triggerWord": "f",
+    "gitlens.currentLine.enabled": false
 }

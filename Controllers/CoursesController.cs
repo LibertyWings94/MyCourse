@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyCourse.Models.Services.Applications;
+using MyCourse.Models.ViewModels;
 
 namespace MyCourse.Controllers
 {
@@ -18,12 +20,14 @@ namespace MyCourse.Controllers
             
         }
 
-        public IActionResult Index()
+        public IActionResult Index() //Metodo che deve recuperare la List di tutti i corsi
         {
-            return View();
+            var courseService = new CourseService(); //Invocazione del servizio
+            List<CourseViewModel> courses = courseService.GetCourses(); //Metodo che ritorna la lista di tutti i corsi
+            return View(courses);
         }
 
-        public IActionResult Detail(string id)
+        public IActionResult Detail(string id) //Metodo che deve recuperare info corsi che hanno id come parametro
         {
             return View();
         }
