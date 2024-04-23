@@ -27,9 +27,11 @@ namespace MyCourse.Controllers
             return View(courses);
         }
 
-        public IActionResult Detail(string id) //Metodo che deve recuperare info corsi che hanno id come parametro
+        public IActionResult Detail(int id) //Metodo che deve recuperare info corsi che hanno id come parametro
         {
-            return View();
+            var courseService = new CourseService();
+            CourseDetailViewModel viewModel = courseService.GetCourse(id);
+            return View(viewModel);
         }
 
         public IActionResult Error()
